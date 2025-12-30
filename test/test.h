@@ -70,14 +70,14 @@ typedef struct {
 
 void run_test(TestCase* test) {
     last_test_status = 1;
-    printf("[ RUN ] %s\n", test->name);
+    printf("[ RUN ] %s", test->name);
     test->test(); 
     
     if (last_test_status) { 
-        printf(GREEN "[ PASS ]" RESET "\n");
+        printf("\r" GREEN "[ PASS ] " RESET  "%s\n", test->name);
     } else {
         failed_tests++;
-        printf(RED "[ FAILED ]" RESET "\n");
+        printf("\r" RED "[ FAIL ] " RESET "%s\n", test->name);
     }
 }
 
