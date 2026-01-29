@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -Wall -I$(INCDIR)
 
-BASENAME = datastructs
+BASENAME = dstructs
 HEADER = test.h
 
 INCDIR = ../include/

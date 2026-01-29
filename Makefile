@@ -5,7 +5,7 @@ ifeq ($(DEBUG),1)
 	CFLAGS += -DDEBUG
 endif
 
-BASENAME = datastructs
+BASENAME = dstructs
 LIB_STATIC = $(BASENAME).a
 
 SRCDIR = src/
@@ -36,7 +36,7 @@ samples: $(SAMPLES)
 $(BINDIR)%: $(SAMPLEDIR)%.c lib | $(BINDIR)
 	@$(CC) $(CFLAGS) $< -L$(LIBDIR) -l$(BASENAME) -o $@
 
-tests: lib
+tests: lib | $(BINDIR)
 	@$(MAKE) -s -C test
 
 $(OBJDIR):
